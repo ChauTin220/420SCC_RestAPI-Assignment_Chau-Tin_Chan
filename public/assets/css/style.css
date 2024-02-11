@@ -5,7 +5,6 @@ h1 {
     font-size: 36px;
     color: rgb(31, 162, 243);
     margin-top: 30px;
-
 }
 
 h2 {
@@ -46,7 +45,8 @@ body {
     background: rgb(16,21,27);
 }
 
-.container {
+/*---------------------------------------------------------------- main ----------------------------------------------------------------*/
+main {
     background-color: rgb(27 41 54);
     width: 500px;
     position: absolute;
@@ -57,7 +57,6 @@ body {
     /* display: flex;
     justify-content: center;
     align-items: center; */
-    /* text-align: center; */
     border-radius: 10px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.141);
 }
@@ -84,7 +83,6 @@ body {
     border: none;
     background: rgb(16,21,27);
     color: white;
-    /* border-bottom: 2px solid #1d2439; */
     font-size: 15px;
 }
 
