@@ -1,5 +1,109 @@
-body{
-    background: yellowgreen;
-    color: blueviolet;
-    font-size: 50px;
+h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 36px;
+    color: rgb(31, 162, 243);
+    margin-top: 30px;
+
+}
+
+h2 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: white;
+    margin: 20px;
+    border: none;
+    border-left: 3px solid #efff00;
+    padding-left: 14px;
+}
+
+h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: rgb(234, 234, 234);
+    margin-top: 10px;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    color: white;
+}
+
+body {
+    background: rgb(16,21,27);
+}
+
+.container {
+    background-color: rgb(27 41 54);
+    width: 500px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 50px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* text-align: center; */
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.141);
+}
+
+#logoarea {
+    text-align: center;
+}
+
+#logo {
+    width: 50%;
+    margin-bottom: 40px;
+}
+
+/*---------------------------------------------------------------- search ----------------------------------------------------------------*/
+.search {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search input {
+    padding: 10px;
+    width: 70%;
+    border: none;
+    background: rgb(16,21,27);
+    color: white;
+    /* border-bottom: 2px solid #1d2439; */
+    font-size: 15px;
+}
+
+.search button {
+    padding: 10px 0;
+    width: 25%;
+    background-color: #efff00;
+    border: none;
+    color: rgb(16,21,27);
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*---------------------------------------------------------------- result ----------------------------------------------------------------*/
+.result {
+    position: relative;
+    text-align: left;
 }

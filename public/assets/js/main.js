@@ -1,27 +1,41 @@
-console.log('test this');
+const result = document.getElementById("result");
+const btn = document.getElementById("searchbtn");
 
-// async/await
-async function getData(key, city) {
-    try {
-        const foobar = await fetch(`http://api.weatherapi.com/v1/current.json?q=${city}&key=${key}`);
-        console.log(foobar);
-        const infoFromServer = await foobar.json();
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'd2175b9474msh54928781a9d1e80p1eb92bjsncae22fa1296e',
+		'X-RapidAPI-Host': 'mashape-community-urban-dictionary.p.rapidapi.com'
+	}
+};
 
-        console.log(infoFromServer);
-        console.log(infoFromServer.current.temp_c);
 
-        const content = document.getElementById("weather-info");
-        content.innerHTML = `
-        <p>Right now it is ...</p>
-        <p>${infoFromServer.location.name}, ${infoFromServer.location.country} </p>
-        <p>${infoFromServer.current.temp_c} °C</p>
-        <p><img src="${infoFromServer.current.condition.icon}" alt="${infoFromServer.current.condition.text}"/>${infoFromServer.current.condition.text}</p>
-        `;
+btn.addEventListener("click", () => {
+    const input = document.getElementById("inputword").value;
+    // console.log (inputW);
 
-    } catch (error) {
-        console.warn(`Nope:${error}`);
-        // console.warn("Nope:" + error);
+    // async/await
+    async function getData() {
+        try {
+            const response = await fetch(`https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=${input}`, options);
+            // console.log(response);
+            const infoFromServer = await response.json();
+            console.log(infoFromServer);
+
+            result.innerHTML = `
+            <h1>${infoFromServer.list[0].word}</h1>
+            <p>${infoFromServer.list[0].definition}</p>
+            <h2>${infoFromServer.list[0].example}</h2>
+            <h3>By ${infoFromServer.list[0].author} on ${infoFromServer.list[0].written_on}</h3>
+            `;
+    
+        } catch (error) {
+            console.warn(`Nope:${error}`);
+        }
     }
 
-}
-getData('29a43923498e423e92d183223230102', 'London');
+    getData();
+
+});
+
+
